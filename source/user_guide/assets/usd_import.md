@@ -109,6 +109,18 @@ scene.add_stage(
 
 `vis_mode="collision"` renders the collision geometry instead of the visual meshes, which is the fastest way to check that collision shapes match what you expect.
 
+## Mass, friction, and collision filtering
+
+Genesis World honors the physics properties an asset authors through the standard `UsdPhysics` schemas, so a well-authored stage simulates with its intended masses and surfaces and needs no per-link fixups in your script.
+
+**Mass and inertia.** A `UsdPhysics.MassAPI` on a link supplies its `mass`, `centerOfMass`, `diagonalInertia`, and `principalAxes`. Each is honored only where actually authored: the schema's placeholder defaults (`-inf` for the center of mass, a zero quaternion for the principal axes, a zero diagonal inertia) mean "derive it from geometry", and Genesis World treats them that way. Where no explicit mass is authored, the link's inertial properties are estimated from its collision geometry and density, exactly as for other formats. `mass` scales with the cube of the morph `scale`, so a scaled asset keeps a consistent density.
+
+**Density.** A density authored on the link's `MassAPI` takes precedence over the density of any physics material bound to that link's geoms, matching USD precedence. Either one feeds the density-derived mass estimate for links whose mass is not authored outright.
+
+**Physics material.** A `UsdPhysicsMaterialAPI` bound to a collision prim sets that geom's friction: `dynamicFriction` is preferred, falling back to `staticFriction`, and a value of zero is honored as a genuinely frictionless collider rather than treated as unauthored. Where neither is authored the Genesis default applies. `restitution` has no rigid-rigid equivalent in the rigid solver, which governs contact elasticity through the solver's `sol_params` instead, so it is parsed and dropped with a one-time warning; see {doc}`/user_guide/theory/rigid_collision/rigid_constraint_model`.
+
+**Collision filtering.** `UsdPhysics.CollisionGroup` (group membership, `filteredGroups`, and `mergeGroupName`) and per-prim `UsdPhysics.FilteredPairsAPI` both disable contact between the pairs they name. Two cases warn and leave the pairs colliding rather than guessing: `invertFilteredGroups` is unsupported, and so is a relationship spanning two prims that land in different entities, since `add_stage` splits the stage into separate entities and filtering is solved per entity. Filtering within one entity, which is what self-collision filtering needs, is unaffected.
+
 ## Joint dynamics attributes
 
 Some joint properties (friction, armature, passive stiffness and damping) are not part of the core USD physics schema, so exporters store them under custom attribute names. Isaac Sim, for example, writes `physxJoint:jointFriction` and `physxLimit:angular:stiffness`. Genesis World reads each property from a list of candidate attribute names, trying them in order and using the first that exists:

@@ -43,25 +43,26 @@ OpenCV windows opened with `GUI=True` sometimes render black on the first frame.
 
 ## Recording a video
 
-To capture a video, call `start_recording()`, render a frame each step, then `stop_recording()` to encode the accumulated frames. Every `cam.render()` call between the two is added to the recording. Here the camera orbits the scene while the simulation steps:
+To capture a video, name the file and the framerate on `start_recording()`, step the scene, then call `stop_recording()` to finalize the file. The camera renders itself from within `scene.step()`, so no `cam.render()` call is needed in the loop. Here the camera orbits the scene while the simulation steps:
 
 ```python
 import math
 
-cam.start_recording()
+cam.start_recording(save_to_filename="video.mp4", fps=60)
 
 for i in range(120):
-    scene.step()
     cam.set_pose(
         pos=(3.0 * math.sin(i / 60), 3.0 * math.cos(i / 60), 2.5),
         lookat=(0, 0, 0.5),
     )
-    cam.render()
+    scene.step()
 
-cam.stop_recording(save_to_filename="video.mp4", fps=60)
+cam.stop_recording()
 ```
 
-If you omit `save_to_filename`, Genesis World generates a name from the calling script. The result:
+Frames are encoded and streamed to the file as they are recorded, so the recording length is not limited by memory. `pause_recording()` suspends capture and calling `start_recording()` again resumes the same video, with no gap where the pause was; the filename and framerate are fixed for a whole video and cannot be given again on resume.
+
+One second of video covers one second of `ViewerOptions.realtime_factor`-paced time whatever the framerate, so lowering `fps` costs temporal resolution rather than changing playback speed. Frames sit a whole number of simulation steps apart, so a requested framerate that `dt` cannot hit exactly is rounded to the closest achievable one, with a warning. If you omit `save_to_filename`, Genesis World generates a name from the calling script; if you omit `fps` it defaults to 60. The result:
 
 <video preload="auto" controls="True" width="100%">
 <source src="../../_static/videos/cam_record.mp4" type="video/mp4">

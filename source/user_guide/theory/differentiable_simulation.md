@@ -42,7 +42,16 @@ print(force.grad)
 - **`backward()` flows through the physics:** calling `backward()` on any tensor derived from scene state runs the standard PyTorch backward pass, then continues the gradient backward through time across the recorded steps, down to the inputs you marked with `requires_grad=True`.
 - **Inputs are ordinary leaf tensors:** control forces, initial positions, and target values are plain PyTorch tensors created with `requires_grad=True`. Any operation that mixes them with scene-derived tensors yields a scene-tracked tensor, which keeps the graph connected.
 
-A single forward run supports one backward pass. Reset the scene with `scene.reset()` before the next forward pass, for example once per optimization step. State tensors follow the batched-optional shape convention (`([n_envs,] ...)`); see {doc}`/user_guide/configuration/conventions`.
+Unrolling the gradient tape rewinds the physics to step 0, so a forward run supports one backward pass and the scene must be rewound before the next one. `loss.backward()` leaves the scene at step 0, which suits an optimization loop that calls `scene.reset()` each iteration anyway. To keep rolling out after the gradients instead, use `scene.backward(loss)`: it snapshots the state, runs the backward pass, restores the snapshot, and re-arms forward and backward, so the scene sits where it did before the call with gradients populated. It leaves the state registered for a bare `scene.reset()` untouched, and returns the state it restored.
+
+```python
+loss = torch.nn.functional.mse_loss(robot.get_pos(), target)
+scene.backward(loss)  # gradients populated, scene still at the end of the rollout
+optimizer.step()
+# keep stepping from here, or scene.reset() to rewind to the initial state
+```
+
+State tensors follow the batched-optional shape convention (`([n_envs,] ...)`); see {doc}`/user_guide/configuration/conventions`.
 
 ## Detaching from the scene
 

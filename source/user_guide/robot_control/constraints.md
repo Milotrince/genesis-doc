@@ -2,7 +2,7 @@
 
 A **constraint** ties two rigid links together so the solver keeps a geometric relationship between them: coincident points, a fixed relative pose, or coupled joint values. Most constraints are declared once in a model file and hold for the whole simulation. One kind, the **weld** constraint, can be added and removed while the simulation runs, which is what makes it the tool for modeling a suction gripper picking up and releasing an object.
 
-This page covers the runtime weld API on the rigid solver, and how the file-declared constraint types relate to it.
+This page covers the runtime weld API on the rigid solver, how the file-declared constraint types relate to it, and the build-time alternative for pairs that are joined for good.
 
 The complete runnable example is [`examples/rigid/suction_cup.py`](https://github.com/Genesis-Embodied-AI/genesis-world/blob/main/examples/rigid/suction_cup.py): a Franka arm reaches a cube, welds it to the hand, lifts and moves it, then releases.
 
@@ -69,6 +69,32 @@ welds = rigid.get_weld_constraints()  # dict with keys "link_a", "link_b", "forc
 ```
 
 Pass `to_torch=False` for NumPy arrays, or `as_tensor=False` to get a per-environment tuple instead of a padded batch.
+
+## Merging entities at build time
+
+A weld is a solver constraint the solver has to satisfy each step. When two entities are joined for the whole simulation, for example a gripper mounted on an arm, `entity.attach()` merges them instead: the child's base link becomes a child link of a parent entity link, and the pair is simulated as one kinematic tree. There is no constraint to solve and no relative drift.
+
+Call it before `scene.build()`, on the child, naming the parent link to mount onto:
+
+```python
+arm = scene.add_entity(gs.morphs.MJCF(file="xml/franka_emika_panda/panda_nohand.xml"))
+hand = scene.add_entity(gs.morphs.MJCF(file="xml/franka_emika_panda/hand.xml"))
+hand.attach(arm, parent_link_name="attachment")
+```
+
+`parent_link_name` defaults to the last link of the parent's kinematic tree. By default the child mounts at the pose its morph was created with, so an asset authored to sit at the mount point needs nothing further. To place it yourself, pass the mounting `pos` and `quat` relative to the parent link frame, which override the morph pose:
+
+```python
+bracket = scene.add_entity(gs.morphs.Box(size=(0.04, 0.04, 0.01)))
+# Mount the bracket 5 cm along the hand's z axis, rotated a quarter turn about it.
+bracket.attach(arm, parent_link_name="attachment", pos=(0.0, 0.0, 0.05), quat=(0.7071, 0.0, 0.0, 0.7071))
+```
+
+Supply only one of the two and the other takes its identity value.
+
+The merged tree's degrees of freedom must form one contiguous range, which shapes the order you build in: instantiate attached entities consecutively, attach onto the last kinematic tree of a multi-tree parent, and attach every child of an entity onto the same tree. The parent must already exist when the child is added.
+
+[`examples/rigid/merge_entities.py`](https://github.com/Genesis-Embodied-AI/genesis-world/blob/main/examples/rigid/merge_entities.py) mounts a Panda hand onto a hand-less Panda arm and drives the merged robot, in every combination of MJCF and URDF sources.
 
 ## Constraint types
 

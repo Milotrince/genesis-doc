@@ -72,6 +72,8 @@ Three MPM objects falling and deforming: an elastic cube, a liquid cube, and an 
 
 The Finite Element Method discretizes an entity into a tetrahedral mesh and solves the elasticity equations on it. Choose FEM over MPM when mesh-level accuracy matters: stiff elastic bodies, volumetric muscles, and contact-rich soft-body manipulation. {py:class}`gs.materials.FEM.Elastic <genesis.engine.materials.FEM.elastic.Elastic>` exposes the physical parameters directly, such as Young's modulus `E` (Pa) and Poisson ratio `nu`.
 
+A FEM entity renders from the mesh it was authored with rather than from its tetrahedral boundary, so each sub-mesh keeps its own material, texture, and UVs and segmentation resolves per sub-mesh. The entity exposes them as `entity.vgeoms`, mirroring the rigid entity's visual geoms; see the {doc}`FEMEntity reference </api_reference/engine/entity/fem_entity>`.
+
 FEM underpins the {doc}`soft robots tutorial <soft_robots>`, which actuates a volumetric muscle. FEM entities also couple to rigid arms for grasping; see [`examples/coupling/fem_cube_linked_with_arm.py`](https://github.com/Genesis-Embodied-AI/genesis-world/blob/main/examples/coupling/fem_cube_linked_with_arm.py).
 
 ## PBD: cloth and topology-preserving deformables
