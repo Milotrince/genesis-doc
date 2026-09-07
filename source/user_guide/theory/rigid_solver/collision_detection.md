@@ -65,8 +65,19 @@ contacts = ball.get_contacts(with_entity=plane)  # only ball-plane contacts
 ```
 
 :::{note}
-With multiple environments, every field carries a leading `n_envs` axis and is padded to the largest contact count across environments, so the same array is rectangular. `valid_mask` (shape `(n_envs, n_contacts)`) marks which rows are real; filter with it before using the data. A single-environment scene returns the fields already trimmed, with no `valid_mask`.
+With multiple environments, every field carries a leading `n_envs` axis and is padded to the largest contact count across environments, so the same array is rectangular. `valid_mask` (shape `(n_envs, n_contacts)`) marks which rows are real; filter with it before using the data. A scene built without environments returns the fields already trimmed, with no `valid_mask`.
 :::
+
+## Reading contacts without a synchronization
+
+Trimming the arrays to the live contact count needs that count on the host, so the call synchronizes the device once per read. Pass `is_padded=True` to skip it. The fields then come back at the fixed capacity the collider allocated rather than at the live count, `valid_mask` is present whether or not the scene is parallelized, and the values are otherwise identical on every backend:
+
+```python
+contacts = ball.get_contacts(is_padded=True)
+mask = contacts["valid_mask"]  # shape ([n_envs,] capacity), True on a real contact
+```
+
+Use it in a training loop that reads contacts every step, where the synchronization is what costs you. For a one-off read while scripting or debugging, the default is easier to work with, because the arrays hold contacts alone.
 
 ## Net contact force per link
 
