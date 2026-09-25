@@ -1,9 +1,9 @@
 # Profiling simulation performance
 
-This page covers how to measure where a Genesis World simulation spends its time. There are four questions worth asking, in order of increasing depth:
+This page covers how to measure where a Genesis World simulation spends its time, through four questions of increasing depth:
 
 - **Throughput:** how many steps per second does the whole scene run? This is the headline number, reported as FPS.
-- **Step breakdown:** how much of a step goes to the physics, and how much to the sensors, the viewer, and the recorders around it? This is what tells you whether the physics is even the thing to optimize.
+- **Step breakdown:** how much of a step goes to the physics, and how much to the sensors, the viewer, and the recorders around it? The answer tells you whether to optimize the physics at all.
 - **Launch latency:** is the GPU actually busy, or is the CPU stalling between kernel launches? This is what limits large parallel simulations that are not yet GPU-bound.
 - **Per-kernel time:** which solver kernels dominate a step? This tells you what to optimize.
 
@@ -70,7 +70,7 @@ See {doc}`/user_guide/configuration/config_system` for how `ProfilingOptions` fi
 
 ## Reading the step breakdown
 
-The counter reports the rate of the whole step, which includes everything the scene does around the physics. To see where that time goes, read `scene.timings` after stepping. It maps each phase of a step to its mean wall time in seconds:
+The FPS counter reports the rate of the whole step, which includes everything the scene does around the physics. To see where that time goes, read `scene.timings` after stepping. It maps each phase of a step to its mean wall time in seconds:
 
 | Phase | Covers |
 |---|---|
@@ -81,9 +81,9 @@ The counter reports the rate of the whole step, which includes everything the sc
 | `video` | the cameras rendering and encoding a frame of a recording |
 | `total` | the whole step, the pre-step callbacks included |
 
-A step that skips a phase leaves that phase out, so a scene with no sensors never reports a `sensors` time and the mapping is empty until the first `scene.step()` returns.
+A phase the step skips is absent from the mapping, so a scene with no sensors never reports a `sensors` time. The mapping stays empty until the first `scene.step()` returns.
 
-Each reading covers the last step alone by default, which jitters from step to step. Average over a window instead with `timings_window`, at the cost of as many steps of delay before a change in speed shows up:
+By default each reading covers the last step only, so it jitters from step to step. Set `timings_window` to average over that many steps instead, and a change in speed then takes as many steps to show:
 
 ```python
 scene = gs.Scene(
@@ -94,16 +94,16 @@ scene = gs.Scene(
 )
 ```
 
-Invert a phase to read it as a rate, which is how you follow the physics on its own while the sensors, rendering, and recording around it are left out:
+Invert a phase to read it as a rate, for instance the step rate of the physics without the sensors, rendering, and recording around it:
 
 ```python
 physics_fps = 1.0 / scene.timings["physics"]  # steps per second of the physics alone
 ```
 
-[`examples/rigid/hibernation.py`](https://github.com/Genesis-Embodied-AI/genesis-world/blob/main/examples/rigid/hibernation.py) does exactly that, plotting the physics rate live against the number of awake bodies as a pile of objects settles.
+[`examples/rigid/hibernation.py`](https://github.com/Genesis-Embodied-AI/genesis-world/blob/main/examples/rigid/hibernation.py) plots this rate live against the number of awake bodies while a pile of objects settles.
 
 :::{warning}
-On a GPU backend a phase measures the host-side work of launching its kernels, which the device completes asynchronously, so only on the CPU backend do the phases genuinely split the step. The `total` is faithful on every backend, as long as something in the step reads the device back and therefore waits for it.
+On a GPU backend, a phase measures the host time spent launching its kernels while the device runs them asynchronously, so the phases add up to the real step only on the CPU backend. `total` is accurate on every backend as long as something in the step reads data back from the device, which makes the host wait for it.
 :::
 
 ## Measuring throughput
