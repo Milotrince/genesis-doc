@@ -113,6 +113,8 @@ franka = scene.add_entity(
 )
 ```
 
+`enable_coup_collision` follows the same pattern: disable it for the entity and enable it again in the `RigidLinkSolverOptions` of the links that should collide in IPC, while every other link keeps its coupling forces without contact.
+
 ## Coupler options
 
 `IPCCouplerOptions` exposes the Genesis-side coupling behavior plus pass-through knobs for the libuipc solver. Most solver knobs default to `None`, meaning libuipc's own default applies; the fields below are the ones you are most likely to set. See the {doc}`IPCCoupler options API </api_reference/engine/couplers/ipc_coupler>` for the complete list, including the Newton, line-search, and linear-system parameters.

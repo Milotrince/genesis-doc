@@ -59,7 +59,7 @@ A rigid entity can set options on some of its links and collision geoms, and an 
 
 ### Links
 
-Select links by name with {py:class}`gs.LinkIndex.named <genesis.options.indices.LinkIndex>`, or write the name, or a tuple of names, as the key. This excerpt from [`examples/rigid/grasp_bottle.py`](https://github.com/Genesis-Embodied-AI/genesis-world/blob/main/examples/rigid/grasp_bottle.py) gives the finger pads of a Franka arm a grippy material, while the rest of the arm keeps the friction its asset states:
+Select links by name with {py:class}`gs.LinkIndex.named <genesis.options.indices.LinkIndex>`, or write the name, or a tuple of names, as the key. Each name is an exact link name or a glob pattern, so `"panda_finger*"` selects both fingers of a Franka, and a name that matches no link raises an error. This excerpt from [`examples/rigid/grasp_bottle.py`](https://github.com/Genesis-Embodied-AI/genesis-world/blob/main/examples/rigid/grasp_bottle.py) gives the finger pads of a Franka arm a grippy material, while the rest of the arm keeps the friction its asset states:
 
 ```python
 franka = scene.add_entity(
