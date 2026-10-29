@@ -59,7 +59,7 @@ A rigid entity can set options on some of its links and collision geoms, and an 
 
 ### Links
 
-Select links by name with {py:class}`gs.LinkIndex.named <genesis.options.indices.LinkIndex>`, or write the name, or a tuple of names, as the key. Each name is an exact link name or a glob pattern, so `"panda_finger*"` selects both fingers of a Franka, and a name that matches no link raises an error. This excerpt from [`examples/rigid/grasp_bottle.py`](https://github.com/Genesis-Embodied-AI/genesis-world/blob/main/examples/rigid/grasp_bottle.py) gives the finger pads of a Franka arm a grippy material, while the rest of the arm keeps the friction its asset states:
+Select links by name with {py:class}`gs.LinkIndex.named <genesis.options.indices.LinkIndex>`, or write the name, or a tuple of names, as the key. Each name is an exact link name or a glob pattern, so `"panda_finger*"` selects both fingers of a Franka, and a name that matches no link raises an error. `gs.LinkIndex.subtree("hand")` selects a link and every link below it in the kinematic tree, which is how to address a whole gripper without listing its links. This excerpt from [`examples/rigid/grasp_bottle.py`](https://github.com/Genesis-Embodied-AI/genesis-world/blob/main/examples/rigid/grasp_bottle.py) gives the finger pads of a Franka arm a grippy material, while the rest of the arm keeps the friction its asset states:
 
 ```python
 franka = scene.add_entity(
@@ -82,7 +82,7 @@ franka = scene.add_entity(
 
 ### Geoms
 
-Select collision geoms with {py:class}`gs.GeomIndex <genesis.options.indices.GeomIndex>`, by their ordinal within their link as the asset states them: `gs.GeomIndex.at(0)` picks the first collision geom, and `gs.GeomIndex.all()` picks every one. Geom options sit in the `geoms` field of `LinkOptions`, for the geoms of the selected links, or in the `geoms` field of `RigidEntityOptions`. The entity-level field takes `gs.GeomIndex.all()` for any morph, and other selections only for a mesh or a primitive, whose entity has a single link.
+Select collision geoms with {py:class}`gs.GeomIndex <genesis.options.indices.GeomIndex>`, by their ordinal within their link as the asset states them, or by the name the asset gives them: `gs.GeomIndex.at(0)` picks the first collision geom, `gs.GeomIndex.named("foot*")` the geoms whose names match the glob, and `gs.GeomIndex.all()` every one. MJCF assets name their geoms and USD assets name them by prim path, while URDF assets state no geom names. Geom options sit in the `geoms` field of `LinkOptions`, for the geoms of the selected links, or in the `geoms` field of `RigidEntityOptions`. The entity-level field takes `gs.GeomIndex.all()` and `gs.GeomIndex.named` for any morph, and ordinals only for a mesh or a primitive, whose entity has a single link. [`examples/rigid/link_and_geom_options.py`](https://github.com/Genesis-Embodied-AI/genesis-world/blob/main/examples/rigid/link_and_geom_options.py) gives the feet of a humanoid grippy geoms by name and makes its right leg denser through a subtree.
 
 The ordinal counts the geoms as the asset states them, before Genesis World decomposes a mesh into convex pieces, so a geom option applies to every piece of the geom it selects.
 
