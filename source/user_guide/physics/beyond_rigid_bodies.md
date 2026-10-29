@@ -52,7 +52,9 @@ obj = scene.add_entity(
             color=(1.0, 0.4, 0.4),
             vis_mode="visual",
         ),
-        material=gs.materials.Elastic(),
+        material=gs.materials.Elastic(
+            youngs_modulus=3e5,
+        ),
     ),
 )
 ```
@@ -64,7 +66,7 @@ The Material Point Method carries mass on particles while resolving forces on a 
 Only the `material` differs between an elastic cube, a liquid cube, and an elastoplastic sphere:
 
 ```python
-scene.add_entity(options=gs.options.MPMEntityOptions(material=gs.materials.Elastic(), ...))
+scene.add_entity(options=gs.options.MPMEntityOptions(material=gs.materials.Elastic(youngs_modulus=3e5), ...))
 scene.add_entity(options=gs.options.MPMEntityOptions(material=gs.materials.Liquid(), ...))
 scene.add_entity(options=gs.options.MPMEntityOptions(material=gs.materials.ElastoPlastic(), ...))
 ```
