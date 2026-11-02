@@ -1,0 +1,19 @@
+source/_static/version_switcher.json
+  s_d3a756077a94de::t_99d9defa2848a1 8-12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8d7e2d800b60663b9ed6e7786966a5b6c9f2427a",
+  "prompts": {},
+  "sessions": {
+    "s_d3a756077a94de": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "115d6c24-2732-4bf9-a507-e14b9f91e88e",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Trinity Chung <trinity.chung@genesis-ai.company>"
+    }
+  }
+}

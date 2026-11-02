@@ -1,0 +1,127 @@
+source/api_reference/index.md
+  s_c960e3a1fa9c88::t_9d29289e02dc52 8
+  s_c960e3a1fa9c88::t_9c9efb098daeeb 7
+source/user_guide/configuration/config_system.md
+  s_c960e3a1fa9c88::t_b3d108108b9e32 84,89,93-99,105-107,111
+source/api_reference/engine/solvers/kinematic_solver.md
+  s_c960e3a1fa9c88::t_d7bad64473afa8 3,22
+source/user_guide/configuration/index.md
+  s_c960e3a1fa9c88::t_fc859d085ef59d 12
+source/api_reference/options/material/index.md
+  s_c960e3a1fa9c88::t_5de7088d62575e 1-2,4-35
+  s_c960e3a1fa9c88::t_7eac3c74d7968c 3
+source/api_reference/engine/solvers/fem_solver.md
+  s_c960e3a1fa9c88::t_d7bad64473afa8 3,23
+source/api_reference/engine/entity/rigid_entity/rigid_entity.md
+  s_c960e3a1fa9c88::t_168704000e298d 3-12
+source/api_reference/engine/entity/sph_entity.md
+  s_c960e3a1fa9c88::t_168704000e298d 3-12
+source/api_reference/engine/solvers/sf_solver.md
+  s_c960e3a1fa9c88::t_5ee43afbdc66ab 5
+source/api_reference/options/material/material.md
+  s_c960e3a1fa9c88::t_5de7088d62575e 1-7
+source/api_reference/engine/entity/fem_entity.md
+  s_c960e3a1fa9c88::t_168704000e298d 3-16
+source/api_reference/engine/entity/pbd_entity/pbd_particle.md
+  s_c960e3a1fa9c88::t_168704000e298d 3-12
+source/api_reference/engine/solvers/index.md
+  s_c960e3a1fa9c88::t_d7bad64473afa8 3,5
+source/api_reference/options/material/muscle.md
+  s_c960e3a1fa9c88::t_5de7088d62575e 1-7
+source/api_reference/engine/entity/index.md
+  s_c960e3a1fa9c88::t_5a5f0822ea5da6 5,8,11,13,17,19-38,44,57
+source/api_reference/engine/entity/pbd_entity/pbd_free_particle.md
+  s_c960e3a1fa9c88::t_168704000e298d 3-12
+source/api_reference/engine/entity/rigid_entity/rigid_link.md
+  s_c960e3a1fa9c88::t_168704000e298d 3-12
+source/api_reference/engine/entity/pbd_entity/index.md
+  s_c960e3a1fa9c88::t_13b3e6a394a911 3
+source/api_reference/engine/solvers/mpm_solver.md
+  s_c960e3a1fa9c88::t_d7bad64473afa8 3,23
+source/api_reference/engine/entity/mpm_entity.md
+  s_c960e3a1fa9c88::t_168704000e298d 3-12
+source/api_reference/options/material/sand.md
+  s_c960e3a1fa9c88::t_5de7088d62575e 1-7
+source/api_reference/options/material/cloth.md
+  s_c960e3a1fa9c88::t_5de7088d62575e 1-7
+source/api_reference/options/selections.md
+  s_c960e3a1fa9c88::t_8d799daedb0204 1-24
+source/api_reference/engine/index.md
+  s_c960e3a1fa9c88::t_9d29289e02dc52 3
+source/api_reference/engine/entity/hybrid_entity.md
+  s_c960e3a1fa9c88::t_168704000e298d 3-12
+source/api_reference/engine/entity/pbd_entity/pbd_3d.md
+  s_c960e3a1fa9c88::t_168704000e298d 3-12
+source/api_reference/options/material/liquid.md
+  s_c960e3a1fa9c88::t_5de7088d62575e 1-7
+source/api_reference/engine/entity/rigid_entity/rigid_geom.md
+  s_c960e3a1fa9c88::t_168704000e298d 3-10
+source/api_reference/engine/solvers/pbd_solver.md
+  s_c960e3a1fa9c88::t_d7bad64473afa8 3,23
+source/api_reference/engine/solvers/sph_solver.md
+  s_c960e3a1fa9c88::t_d7bad64473afa8 3,23
+source/user_guide/configuration/entity_options.md
+  s_c960e3a1fa9c88::t_4b87036c02d4d7 1-11,17-24,26-28,30-61,63-90,92-125,127-134
+  s_c960e3a1fa9c88::t_ea5ec0ff3d817f 12-16,25,29
+  s_c960e3a1fa9c88::t_fc859d085ef59d 62,91
+  s_c960e3a1fa9c88::t_113d3f5ec06227 126
+source/user_guide/physics/emitters.md
+  s_c960e3a1fa9c88::t_ea5ec0ff3d817f 5,23-31,53-61,65-66,132-140,143-151
+source/api_reference/options/material/snow.md
+  s_c960e3a1fa9c88::t_5de7088d62575e 1-7
+source/api_reference/options/material/elastic.md
+  s_c960e3a1fa9c88::t_5de7088d62575e 1-7
+source/api_reference/options/index.md
+  s_c960e3a1fa9c88::t_2e2f59f95287ba 16-19,28-34
+  s_c960e3a1fa9c88::t_a1eb40a852dc04 35
+source/user_guide/physics/coupling/sap_coupler.md
+  s_c960e3a1fa9c88::t_ac0fa1302bf7a3 131
+  s_c960e3a1fa9c88::t_81c53ef39dd8a2 34,38-50
+source/api_reference/options/material/elasto_plastic.md
+  s_c960e3a1fa9c88::t_5de7088d62575e 1-7
+source/api_reference/engine/entity/kinematic_entity.md
+  s_c960e3a1fa9c88::t_168704000e298d 1-18
+source/user_guide/physics/hybrid_entity.md
+  s_c960e3a1fa9c88::t_b9ce09f1d1e7c9 14,18,44,48-53,55-58,60,62,69,73-75,117,120
+source/user_guide/rendering/surfaces_textures.md
+  s_c960e3a1fa9c88::t_faf76f9492000e 6
+  s_c960e3a1fa9c88::t_d8c3d67b88e31b 138-141,143-154
+source/api_reference/engine/entity/pbd_entity/pbd_2d.md
+  s_c960e3a1fa9c88::t_168704000e298d 3-12
+source/user_guide/assets/mesh_processing.md
+  s_c960e3a1fa9c88::t_147f88942b96c9 118-126
+source/user_guide/configuration/simulation_tuning.md
+  s_c960e3a1fa9c88::t_9e35509ba2a31a 60
+source/user_guide/physics/beyond_rigid_bodies.md
+  s_c960e3a1fa9c88::t_d43f4cef1fd54b 3,9,11-16,42,46-56,67-69,81,87,112,114,118-128,142
+source/user_guide/physics/coupling/ipc_coupler.md
+  s_c960e3a1fa9c88::t_ec37d4ba02dec1 39,43-54,59,63-74,84,92,96-111,124-125,134,152-167,172-185
+source/user_guide/physics/force_fields.md
+  s_c960e3a1fa9c88::t_4b7d5e0f26ad86 34-39
+source/user_guide/physics/rigid_bodies.md
+  s_c960e3a1fa9c88::t_f3b69569abe9e9 7,14-22,40,45-48
+source/user_guide/physics/soft_robots.md
+  s_c960e3a1fa9c88::t_1e9fe719fb7231 5,7-8,31-41,44-57,74,103,107-121,174,178-190,192
+source/user_guide/physics/terrain.md
+  s_c960e3a1fa9c88::t_9908fc6820b856 47
+source/user_guide/theory/rigid_solver/constraints.md
+  s_c960e3a1fa9c88::t_7b418905323d7b 59
+source/user_guide/theory/soft_solvers.md
+  s_c960e3a1fa9c88::t_1323dfe7d66866 3,17,25-27,37,42,46-57,65,71,73-74,76,78,82,84,86,90,92,96,98-99,105,107-110,114-122
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "24824250fe30ea6c3e3bf58bc5d5219c634f1e80",
+  "prompts": {},
+  "sessions": {
+    "s_c960e3a1fa9c88": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f85a0b1c-a7f4-49ca-b375-b50c1b840b61",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Trinity Chung <trinity.chung@genesis-ai.company>"
+    }
+  }
+}
