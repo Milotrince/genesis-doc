@@ -1,0 +1,41 @@
+source/user_guide/overview/installation.md
+  s_b837d365fd7b06::t_c6e4db3e5ec7c7 44
+  s_b837d365fd7b06::t_11d8333455133d 23
+source/user_guide/assets/usd_import.md
+  s_b837d365fd7b06::t_a7017796b7d62f 164
+source/user_guide/theory/soft_solvers.md
+  s_b837d365fd7b06::t_6faf2886f8f36f 17
+source/user_guide/performance/efficient_environment.md
+  s_b837d365fd7b06::t_1500d46e50a8aa 66,69
+source/user_guide/getting_started/control_your_robot.md
+  s_b837d365fd7b06::t_d7741f70b5997e 143
+  s_b837d365fd7b06::t_f4101079663081 147
+source/api_reference/options/index.md
+  s_b837d365fd7b06::t_250697fd0276f1 16
+source/user_guide/configuration/differentiable_simulation.md
+  s_b837d365fd7b06::t_e472cff6396fdb 41
+  s_b837d365fd7b06::t_ec58b652433bbc 42
+  s_b837d365fd7b06::t_b33b252004a186 78
+  s_b837d365fd7b06::t_39867d148521d4 40,43,45
+  s_b837d365fd7b06::t_10450f9baa3c3c 76-77
+source/user_guide/configuration/checkpoints.md
+  s_b837d365fd7b06::t_d221984f0fe766 140
+source/user_guide/interaction/interactive_debugging.md
+  s_b837d365fd7b06::t_68145d6f3f7fa1 137
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "faa71948e6b472f83d8498f05174150d0cac27e3",
+  "prompts": {},
+  "sessions": {
+    "s_b837d365fd7b06": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b72aee81-bfcf-40c6-8635-0ea7c9fc344d",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Trinity Chung <trinity.chung@genesis-ai.company>"
+    }
+  }
+}
