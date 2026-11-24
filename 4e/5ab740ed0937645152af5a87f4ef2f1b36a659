@@ -1,0 +1,103 @@
+source/api_reference/engine/couplers/legacy_coupler.md
+  s_c1e93dcc80ae21::t_ff7ed9ed1079e6 3
+source/api_reference/engine/entity/index.md
+  s_c1e93dcc80ae21::t_af6fa4452a8949 9
+source/api_reference/engine/entity/morph/file_morph/index.md
+  s_c1e93dcc80ae21::t_035a1c0fccdd0e 3
+source/api_reference/engine/entity/morph/index.md
+  s_c1e93dcc80ae21::t_a5344ad53bf8e7 12
+source/api_reference/engine/entity/pbd_entity/index.md
+  s_c1e93dcc80ae21::t_38a1eec7da9f79 3
+source/api_reference/engine/entity/surface/index.md
+  s_c1e93dcc80ae21::t_048b567cb7515b 3
+source/api_reference/engine/entity/texture/index.md
+  s_c1e93dcc80ae21::t_9eca7977b6c542 3
+source/api_reference/engine/force_field.md
+  s_c1e93dcc80ae21::t_7e8c8df284e211 7
+source/api_reference/engine/sensors/index.md
+  s_c1e93dcc80ae21::t_bb8a3b0231ba78 18-23,29
+source/api_reference/engine/solvers/mpm_solver.md
+  s_c1e93dcc80ae21::t_5db45f260eda66 3
+source/api_reference/utilities/geom.md
+  s_c1e93dcc80ae21::t_87d335d6fbf286 5
+source/api_reference/utilities/tensor_utils.md
+  s_c1e93dcc80ae21::t_d3df335392741c 15
+source/api_reference/visualization/lights.md
+  s_c1e93dcc80ae21::t_7e0bb726336072 6
+source/user_guide/assets/mesh_processing.md
+  s_c1e93dcc80ae21::t_c29c7d5d1970f2 129
+source/user_guide/assets/usd_import.md
+  s_c1e93dcc80ae21::t_115b95f5f1dcc0 8,87,91,107,138
+source/user_guide/configuration/checkpoints.md
+  s_c1e93dcc80ae21::t_c4b1cfde155df4 116,164,201-202
+source/user_guide/configuration/concepts.md
+  s_c1e93dcc80ae21::t_9adf26252eadbf 52,81
+source/user_guide/configuration/conventions.md
+  s_c1e93dcc80ae21::t_10a93f25c1ab4c 70
+source/user_guide/configuration/differentiable_simulation.md
+  s_c1e93dcc80ae21::t_beb836fbad44a7 75,78-79
+source/user_guide/configuration/initialization.md
+  s_c1e93dcc80ae21::t_5c02ed2c17ecf2 27,70,78,87
+source/user_guide/developers/naming_and_variables.md
+  s_c1e93dcc80ae21::t_398e8b67dc2429 71
+source/user_guide/getting_started/control_your_robot.md
+  s_c1e93dcc80ae21::t_ccbea973bde00e 87
+source/user_guide/interaction/visualization.md
+  s_c1e93dcc80ae21::t_c6e3ab393dd930 5
+source/user_guide/overview/what_is_genesis.md
+  s_c1e93dcc80ae21::t_315b4de1fd48df 26
+source/user_guide/performance/efficient_environment.md
+  s_c1e93dcc80ae21::t_94e93cd02e4a0f 75,78,81,96,109
+source/user_guide/performance/multi_gpu.md
+  s_c1e93dcc80ae21::t_511851e8edacbf 38,70,84,89,111,114
+source/user_guide/physics/coupling/index.md
+  s_c1e93dcc80ae21::t_63be781bfb7945 15
+source/user_guide/physics/coupling/sap_coupler.md
+  s_c1e93dcc80ae21::t_28bc475e8c9baf 16
+source/user_guide/physics/force_fields.md
+  s_c1e93dcc80ae21::t_69ea3162f7c526 58,100
+source/user_guide/physics/rigid_bodies.md
+  s_c1e93dcc80ae21::t_b1ad718c6b0796 46
+source/user_guide/physics/soft_robots.md
+  s_c1e93dcc80ae21::t_ee30e88f13c14b 53,107
+source/user_guide/policy_training/domain_randomization.md
+  s_c1e93dcc80ae21::t_c562b6c9a3882e 42,58,80
+source/user_guide/policy_training/examples/locomotion.md
+  s_c1e93dcc80ae21::t_a99d891133c81b 184-185,188-189
+source/user_guide/rendering/cameras.md
+  s_c1e93dcc80ae21::t_16d805bd7f5879 132,172
+source/user_guide/sensing/camera_sensors.md
+  s_c1e93dcc80ae21::t_64d4d88dc0241a 3
+source/user_guide/sensing/contact.md
+  s_c1e93dcc80ae21::t_54f9d780ee4d92 49
+source/user_guide/sensing/custom_sensors/custom_sensors.md
+  s_c1e93dcc80ae21::t_297ea28e3cda65 70-72,119-121,309,313,316-339,342
+source/user_guide/sensing/raycaster.md
+  s_c1e93dcc80ae21::t_001db4e3f30f5c 49
+source/user_guide/sensing/recorders.md
+  s_c1e93dcc80ae21::t_6b324785d85b00 5
+source/user_guide/sensing/tactile.md
+  s_c1e93dcc80ae21::t_af6dbf038cefeb 9-10,32-33,64,126,169,179
+source/user_guide/theory/index.md
+  s_c1e93dcc80ae21::t_63421eead38e98 12
+source/user_guide/theory/rigid_solver/collision_detection.md
+  s_c1e93dcc80ae21::t_cc8edd5ac50db9 9,21
+source/user_guide/theory/soft_solvers.md
+  s_c1e93dcc80ae21::t_7c1b110cc0e9a7 75,103
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4e5ab740ed0937645152af5a87f4ef2f1b36a659",
+  "prompts": {},
+  "sessions": {
+    "s_c1e93dcc80ae21": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6f0e7779-522e-4234-baef-6a90c4cd12a2",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Trinity Chung <trinity.chung@genesis-ai.company>"
+    }
+  }
+}
