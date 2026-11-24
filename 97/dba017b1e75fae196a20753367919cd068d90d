@@ -1,0 +1,19 @@
+source/api_reference/engine/entity/index.md
+  s_c1e93dcc80ae21::t_dc7ab0b71eb251 13-18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "97dba017b1e75fae196a20753367919cd068d90d",
+  "prompts": {},
+  "sessions": {
+    "s_c1e93dcc80ae21": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6f0e7779-522e-4234-baef-6a90c4cd12a2",
+        "model": "unknown"
+      },
+      "human_author": "Trinity Chung <trinity.chung@genesis-ai.company>"
+    }
+  }
+}
