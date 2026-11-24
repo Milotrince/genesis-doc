@@ -1,0 +1,27 @@
+source/user_guide/interaction/visualization.md
+  s_c1e93dcc80ae21::t_522a8713f6d2db 40,62,78
+source/user_guide/overview/installation.md
+  s_c1e93dcc80ae21::t_138d413717fcde 72,80,83
+source/user_guide/physics/beyond_rigid_bodies.md
+  s_c1e93dcc80ae21::t_1932601fed5519 75,87
+source/user_guide/physics/rigid_bodies.md
+  s_c1e93dcc80ae21::t_1991791dba1a4e 64,74
+source/user_guide/rendering/surfaces_textures.md
+  s_c1e93dcc80ae21::t_44444e4f8ddecc 117,146
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f345b7e861de5b71aed4abf7e74e428e534ecf09",
+  "prompts": {},
+  "sessions": {
+    "s_c1e93dcc80ae21": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6f0e7779-522e-4234-baef-6a90c4cd12a2",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Trinity Chung <trinity.chung@genesis-ai.company>"
+    }
+  }
+}
