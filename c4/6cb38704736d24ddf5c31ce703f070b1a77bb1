@@ -1,0 +1,23 @@
+.readthedocs.yaml
+  s_76f6a4f2a33354::t_51ef8e78e31999 1-2,9-13,19-20
+README.md
+  s_76f6a4f2a33354::t_ea698d5c285866 36
+source/conf.py
+  s_76f6a4f2a33354::t_9061b2b52b0a93 2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c46cb38704736d24ddf5c31ce703f070b1a77bb1",
+  "prompts": {},
+  "sessions": {
+    "s_76f6a4f2a33354": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "dc2ddf31-3cc8-47e5-8699-7f1e10686460",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Trinity Chung <trinity.chung@genesis-ai.company>"
+    }
+  }
+}
