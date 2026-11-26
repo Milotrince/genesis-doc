@@ -1,0 +1,68 @@
+source/user_guide/overview/installation.md
+  s_8e060907634b08::t_feac93a47e14f1 44
+source/api_reference/engine/entity/texture/dynamic_texture.md
+  s_8e060907634b08::t_d96d22b8e1da3f 1-7
+source/user_guide/rendering/surfaces_textures.md
+  s_8e060907634b08::t_398fd7d8256706 74
+  s_8e060907634b08::t_e0bae26701b3d3 144,146
+  s_8e060907634b08::t_8eb6988506d892 92-118
+  s_8e060907634b08::t_b076ab74e6b7df 57
+source/user_guide/configuration/simulation_tuning.md
+  s_8e060907634b08::t_f0b6592b5fec28 21
+source/api_reference/engine/entity/texture/index.md
+  s_8e060907634b08::t_d86f334f087736 13
+source/api_reference/visualization/camera.md
+  s_8e060907634b08::t_dcf474a0c4d802 18-23
+source/api_reference/engine/solvers/rigid_solver.md
+  s_8e060907634b08::t_4765bfb46451b2 11-14
+source/user_guide/interaction/visualization.md
+  s_8e060907634b08::t_96c6c7f69c4b30 40
+  s_8e060907634b08::t_dc1258af4aff41 51
+  s_8e060907634b08::t_be27f2b1e03e4a 52-85
+source/user_guide/assets/mesh_processing.md
+  s_8e060907634b08::t_6791d2d010d3dc 19-21,31
+source/api_reference/engine/solvers/sph_solver.md
+  s_8e060907634b08::t_589e88a49772d3 11-12
+source/api_reference/engine/solvers/fem_solver.md
+  s_8e060907634b08::t_6472c1fdb198af 11-14
+source/api_reference/engine/solvers/mpm_solver.md
+  s_8e060907634b08::t_58ded16fe8fe02 11-16
+source/api_reference/visualization/renderers/raytracer.md
+  s_8e060907634b08::t_1191edb12bf234 3
+source/user_guide/physics/force_fields.md
+  s_8e060907634b08::t_deab276368311e 15
+  s_8e060907634b08::t_a6dba30069053f 50
+  s_8e060907634b08::t_e7f4da98c136db 60,62
+source/api_reference/engine/solvers/kinematic_solver.md
+  s_8e060907634b08::t_870b67281b4448 11-14
+source/api_reference/engine/solvers/pbd_solver.md
+  s_8e060907634b08::t_c62d264071e82c 11-14
+source/user_guide/assets/usd_import.md
+  s_8e060907634b08::t_7a0bb06021451d 109
+source/user_guide/physics/beyond_rigid_bodies.md
+  s_8e060907634b08::t_64cfcafc25b4e1 99
+  s_8e060907634b08::t_56ab0afc170358 42,48
+  s_8e060907634b08::t_a13f09472f0f29 112
+source/api_reference/visualization/viewer.md
+  s_8e060907634b08::t_6ae670059c6fbc 17-20
+source/user_guide/physics/emitters.md
+  s_8e060907634b08::t_de84d2e4ddbc6d 55
+source/user_guide/interaction/viewer_plugin.md
+  s_8e060907634b08::t_6f7d82994e6c78 150
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4268913144aaca8789c653793334cec63502cdcb",
+  "prompts": {},
+  "sessions": {
+    "s_8e060907634b08": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "249ffd0d-6f8d-416e-a83a-d2151d7107e0",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Trinity Chung <trinity.chung@genesis-ai.company>"
+    }
+  }
+}
